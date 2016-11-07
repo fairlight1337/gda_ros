@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(gda_ros)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wextra -Wall")
+
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
@@ -8,7 +10,7 @@ add_subdirectory(
   3rdparty/GDAPlanner)
 
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
+  roscpp message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -64,6 +66,8 @@ add_service_files(
 #   Action2.action
 # )
 
+generate_messages()
+
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
@@ -95,6 +99,7 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  3rdparty/GDAPlanner/include
 )
 
 ## Declare a cpp library
