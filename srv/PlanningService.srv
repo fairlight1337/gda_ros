@@ -1,0 +1,5 @@
+string[] world_state
+string[] goal_conditions
+---
+bool solution_found
+string[] steps

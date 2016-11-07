@@ -1,0 +1,3 @@
+[submodule "GDAPlanner"]
+	path = GDAPlanner
+	url = https://github.com/fairlight1337/GDAPlanner
